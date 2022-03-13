@@ -1,6 +1,6 @@
-package co.com.ias.training.ServicioMantenimiento.controller.models;
+package co.com.ias.training.ServicioMantenimiento.infrastructure.controller.models;
 
-import co.com.ias.training.ServicioMantenimiento.domain.Servicio;
+import co.com.ias.training.ServicioMantenimiento.core.domain.Servicio;
 
 public class ServicioDTO {
 

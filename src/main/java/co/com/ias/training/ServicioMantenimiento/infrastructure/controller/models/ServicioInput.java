@@ -1,4 +1,4 @@
-package co.com.ias.training.ServicioMantenimiento.controller.models;
+package co.com.ias.training.ServicioMantenimiento.infrastructure.controller.models;
 
 public class ServicioInput {
 

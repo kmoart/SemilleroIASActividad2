@@ -1,9 +1,9 @@
 package co.com.ias.training.ServicioMantenimiento.shared;
 
-import co.com.ias.training.ServicioMantenimiento.domain.Servicio;
-import co.com.ias.training.ServicioMantenimiento.domain.ServicioDescription;
-import co.com.ias.training.ServicioMantenimiento.domain.ServicioId;
-import co.com.ias.training.ServicioMantenimiento.domain.ServicioName;
+import co.com.ias.training.ServicioMantenimiento.core.domain.Servicio;
+import co.com.ias.training.ServicioMantenimiento.core.domain.ServicioDescription;
+import co.com.ias.training.ServicioMantenimiento.core.domain.ServicioId;
+import co.com.ias.training.ServicioMantenimiento.core.domain.ServicioName;
 
 public class Tests {
 

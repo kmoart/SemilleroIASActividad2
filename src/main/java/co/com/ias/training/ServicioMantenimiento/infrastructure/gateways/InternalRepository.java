@@ -1,4 +1,4 @@
-package co.com.ias.training.ServicioMantenimiento.repositories;
+package co.com.ias.training.ServicioMantenimiento.infrastructure.gateways;
 
 import org.springframework.stereotype.Repository;
 

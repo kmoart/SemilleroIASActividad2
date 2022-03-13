@@ -1,4 +1,4 @@
-package co.com.ias.training.ServicioMantenimiento.domain;
+package co.com.ias.training.ServicioMantenimiento.core.domain;
 
 import org.apache.commons.lang3.Validate;
 
