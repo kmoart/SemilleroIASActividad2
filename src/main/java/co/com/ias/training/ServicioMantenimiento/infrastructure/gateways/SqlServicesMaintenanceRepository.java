@@ -57,11 +57,43 @@ public class SqlServicesMaintenanceRepository implements ServiceMaintenanceRepos
 
     @Override
     public Optional<Servicio> get(ServicioId servicioId) {
-        return Optional.empty();
+
+        String sql="SELECT * from servicesMaintenance WHERE servicioId= ?";
+        try(Connection connection  = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement( sql )){
+
+            preparedStatement.setString(1, servicioId.toString());
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.first()){
+                ServicioDBO productDBO = ServicioDBO.fromResultSet(resultSet);
+                Servicio domainServicio = productDBO.toDomain();
+                return Optional.of(domainServicio);
+            }else{
+                return Optional.empty();
+            }
+        }catch (SQLException exception){
+            throw new RuntimeException("Error querying database", exception);
+        }
     }
 
     @Override
     public void store(Servicio servicio) {
+
+        String sql="INSERT INTO serviciosMaintenance (product_id, product_name, product_description) VALUES (?, ?, ?)";
+        try(Connection connection  = dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement( sql )){
+
+            preparedStatement.setString(1, servicio.getId().toString());
+            preparedStatement.setString(2, servicio.getName().toString());
+            preparedStatement.setString(3, servicio.getDescription().toString());
+
+            preparedStatement.executeUpdate();
+
+        }catch (SQLException exception){
+            throw new RuntimeException("Error querying database", exception);
+        }
 
     }
 }

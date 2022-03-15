@@ -5,6 +5,9 @@ import co.com.ias.training.ServicioMantenimiento.core.domain.ServicioDescription
 import co.com.ias.training.ServicioMantenimiento.core.domain.ServicioId;
 import co.com.ias.training.ServicioMantenimiento.core.domain.ServicioName;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class ServicioDBO {
 
     private String id;
@@ -35,6 +38,14 @@ public class ServicioDBO {
                 servicio.getName().toString(),
                 servicio.getDescription().toString()
         );
+    }
+
+    public static ServicioDBO fromResultSet(ResultSet resultSet) throws SQLException {
+        ServicioDBO dbo = new ServicioDBO();
+        dbo.setId(resultSet.getString("product_id"));
+        dbo.setName(resultSet.getString("product_name"));
+        dbo.setDescription(resultSet.getString("product_description"));
+        return dbo;
     }
 
     public String getId() {
